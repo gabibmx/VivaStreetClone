@@ -30,11 +30,11 @@ const HomePage = () => {
                            profile.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            profile.location.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesLocation = !filters.location || profile.location === filters.location;
-      const matchesMinAge = !filters.minAge || profile.age >= parseInt(filters.minAge);
-      const matchesMaxAge = !filters.maxAge || profile.age <= parseInt(filters.maxAge);
-      const matchesEthnicity = !filters.ethnicity || profile.ethnicity === filters.ethnicity;
-      const matchesCategory = !filters.category || profile.category === filters.category;
+      const matchesLocation = filters.location === 'all' || profile.location === filters.location;
+      const matchesMinAge = filters.minAge === 'all' || profile.age >= parseInt(filters.minAge);
+      const matchesMaxAge = filters.maxAge === 'all' || profile.age <= parseInt(filters.maxAge);
+      const matchesEthnicity = filters.ethnicity === 'all' || profile.ethnicity === filters.ethnicity;
+      const matchesCategory = filters.category === 'all' || profile.category === filters.category;
       const matchesVerified = !filters.verified || profile.verified;
       const matchesAvailability = !filters.availability || 
                                  (filters.availability === 'online' ? profile.online : true);
