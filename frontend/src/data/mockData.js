@@ -55,7 +55,7 @@ export const mockProfiles = [
     age: 24,
     location: "Leeds",
     description: "Young and energetic companion with a bubbly personality. Available for various occasions.",
-    images: ["https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400", "https://images.unsplash.com/photo-1554727242-741c14fa561c?w=400"],
+    images: ["https://via.placeholder.com/400x500/dbeafe/3b82f6?text=Emma", "https://via.placeholder.com/400x500/dbeafe/3b82f6?text=Emma+2"],
     verified: false,
     featured: false,
     online: true,
