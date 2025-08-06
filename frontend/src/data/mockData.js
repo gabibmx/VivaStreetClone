@@ -87,7 +87,7 @@ export const mockProfiles = [
     age: 22,
     location: "Liverpool",
     description: "Young and vibrant companion with an adventurous spirit. Perfect for those seeking excitement.",
-    images: ["https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400", "https://images.unsplash.com/photo-1541101767792-f9721b9b8b89?w=400"],
+    images: ["https://via.placeholder.com/400x500/f3e8ff/8b5cf6?text=Zara", "https://via.placeholder.com/400x500/f3e8ff/8b5cf6?text=Zara+2"],
     verified: true,
     featured: false,
     online: true,
