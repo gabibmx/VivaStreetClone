@@ -18,15 +18,15 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
 
   const clearFilters = () => {
     setFilters({
-      location: '',
-      minAge: '',
-      maxAge: '',
-      ethnicity: '',
+      location: 'all',
+      minAge: 'all',
+      maxAge: 'all',
+      ethnicity: 'all',
       services: '',
       priceMin: '',
       priceMax: '',
       availability: '',
-      category: '',
+      category: 'all',
       verified: false,
       withPhotos: false,
       withVideo: false
