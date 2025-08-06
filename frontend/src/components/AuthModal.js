@@ -47,15 +47,15 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
         login(userData, userType);
         
         toast({
-          title: "Welcome back!",
-          description: `Successfully logged in as ${userType}.`,
+          title: "¡Bienvenido de nuevo!",
+          description: `Sesión iniciada correctamente como ${userType === 'customer' ? 'cliente' : 'modelo'}.`,
         });
       } else {
         // Mock signup
         if (formData.password !== formData.confirmPassword) {
           toast({
             title: "Error",
-            description: "Passwords don't match.",
+            description: "Las contraseñas no coinciden.",
             variant: "destructive",
           });
           return;
@@ -70,8 +70,8 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
         signup(userData, userType);
         
         toast({
-          title: "Account created!",
-          description: `Welcome to Vivastreet as ${userType}.`,
+          title: "¡Cuenta creada!",
+          description: `Bienvenido a Vivastreet como ${userType === 'customer' ? 'cliente' : 'modelo'}.`,
         });
       }
       
@@ -87,7 +87,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Algo salió mal. Por favor, inténtalo de nuevo.",
         variant: "destructive",
       });
     }
@@ -114,14 +114,14 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-center">
-            {currentMode === 'login' ? 'Sign In' : 'Sign Up'} as {userType === 'customer' ? 'Customer' : 'Model'}
+            {currentMode === 'login' ? 'Iniciar sesión' : 'Registrarse'} como {userType === 'customer' ? 'Cliente' : 'Modelo'}
           </DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           {currentMode === 'signup' && (
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">Nombre completo</Label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
@@ -130,7 +130,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
                   type="text"
                   required
                   className="pl-10"
-                  placeholder="Enter your full name"
+                  placeholder="Ingresa tu nombre completo"
                   value={formData.name}
                   onChange={handleInputChange}
                 />
@@ -139,7 +139,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Correo electrónico</Label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
@@ -148,7 +148,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
                 type="email"
                 required
                 className="pl-10"
-                placeholder="Enter your email"
+                placeholder="Ingresa tu correo electrónico"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -158,27 +158,27 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
           {currentMode === 'signup' && (
             <>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone">Número de teléfono</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
                   required
-                  placeholder="Enter your phone number"
+                  placeholder="Ingresa tu número de teléfono"
                   value={formData.phone}
                   onChange={handleInputChange}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="age">Age</Label>
+                <Label htmlFor="age">Edad</Label>
                 <Input
                   id="age"
                   name="age"
                   type="number"
                   required
                   min="18"
-                  placeholder="Enter your age"
+                  placeholder="Ingresa tu edad"
                   value={formData.age}
                   onChange={handleInputChange}
                 />
@@ -187,7 +187,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Contraseña</Label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
@@ -196,7 +196,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
                 type={showPassword ? 'text' : 'password'}
                 required
                 className="pl-10 pr-10"
-                placeholder="Enter your password"
+                placeholder="Ingresa tu contraseña"
                 value={formData.password}
                 onChange={handleInputChange}
               />
@@ -216,7 +216,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
 
           {currentMode === 'signup' && (
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">Confirmar contraseña</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
@@ -225,7 +225,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
                   type={showPassword ? 'text' : 'password'}
                   required
                   className="pl-10"
-                  placeholder="Confirm your password"
+                  placeholder="Confirma tu contraseña"
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
                 />
@@ -237,7 +237,7 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
             type="submit"
             className="w-full bg-green-600 hover:bg-green-700"
           >
-            {currentMode === 'login' ? 'Sign In' : 'Create Account'}
+            {currentMode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
           </Button>
 
           <div className="text-center">
@@ -247,8 +247,8 @@ const AuthModal = ({ isOpen, onClose, mode, userType }) => {
               className="text-sm text-green-600 hover:text-green-700 underline"
             >
               {currentMode === 'login' 
-                ? "Don't have an account? Sign up" 
-                : "Already have an account? Sign in"
+                ? "¿No tienes cuenta? Regístrate" 
+                : "¿Ya tienes cuenta? Inicia sesión"
               }
             </button>
           </div>

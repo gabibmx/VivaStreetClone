@@ -37,17 +37,17 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
   return (
     <Card className="sticky top-4">
       <CardHeader>
-        <CardTitle className="text-lg">Search & Filters</CardTitle>
+        <CardTitle className="text-lg">Buscar y Filtros</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Search */}
         <div className="space-y-2">
-          <Label htmlFor="search">Search</Label>
+          <Label htmlFor="search">Buscar</Label>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               id="search"
-              placeholder="e.g. 'asian', 'milf', 'big bust'"
+              placeholder="ej. 'asiática', 'rubia', 'pecho grande'"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -57,13 +57,13 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
 
         {/* Location */}
         <div className="space-y-2">
-          <Label>Location</Label>
+          <Label>Ubicación</Label>
           <Select value={filters.location} onValueChange={(value) => handleFilterChange('location', value)}>
             <SelectTrigger>
-              <SelectValue placeholder="All locations" />
+              <SelectValue placeholder="Todas las ubicaciones" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All locations</SelectItem>
+              <SelectItem value="all">Todas las ubicaciones</SelectItem>
               {mockLocations.map(location => (
                 <SelectItem key={location} value={location}>{location}</SelectItem>
               ))}
@@ -73,14 +73,14 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
 
         {/* Age Range */}
         <div className="space-y-2">
-          <Label>Age</Label>
+          <Label>Edad</Label>
           <div className="flex gap-2">
             <Select value={filters.minAge} onValueChange={(value) => handleFilterChange('minAge', value)}>
               <SelectTrigger>
-                <SelectValue placeholder="Min" />
+                <SelectValue placeholder="Mín" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Any</SelectItem>
+                <SelectItem value="all">Cualquiera</SelectItem>
                 {[18, 19, 20, 21, 22, 25, 30, 35, 40, 45, 50].map(age => (
                   <SelectItem key={age} value={age.toString()}>{age}</SelectItem>
                 ))}
@@ -88,10 +88,10 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
             </Select>
             <Select value={filters.maxAge} onValueChange={(value) => handleFilterChange('maxAge', value)}>
               <SelectTrigger>
-                <SelectValue placeholder="Max" />
+                <SelectValue placeholder="Máx" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Any</SelectItem>
+                <SelectItem value="all">Cualquiera</SelectItem>
                 {[25, 30, 35, 40, 45, 50, 60].map(age => (
                   <SelectItem key={age} value={age.toString()}>{age}</SelectItem>
                 ))}
@@ -102,13 +102,13 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
 
         {/* Ethnicity */}
         <div className="space-y-2">
-          <Label>Ethnicity</Label>
+          <Label>Etnia</Label>
           <Select value={filters.ethnicity} onValueChange={(value) => handleFilterChange('ethnicity', value)}>
             <SelectTrigger>
-              <SelectValue placeholder="All" />
+              <SelectValue placeholder="Todas" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="all">Todas</SelectItem>
               {mockEthnicities.map(ethnicity => (
                 <SelectItem key={ethnicity} value={ethnicity}>{ethnicity}</SelectItem>
               ))}
@@ -118,32 +118,32 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
 
         {/* Category */}
         <div className="space-y-2">
-          <Label>Category</Label>
+          <Label>Categoría</Label>
           <Select value={filters.category} onValueChange={(value) => handleFilterChange('category', value)}>
             <SelectTrigger>
-              <SelectValue placeholder="All" />
+              <SelectValue placeholder="Todas" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="Independent">Independent</SelectItem>
-              <SelectItem value="Agency">Agency</SelectItem>
+              <SelectItem value="all">Todas</SelectItem>
+              <SelectItem value="Independiente">Independiente</SelectItem>
+              <SelectItem value="Agencia">Agencia</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         {/* Price Range */}
         <div className="space-y-2">
-          <Label>Rates (per hour)</Label>
+          <Label>Tarifas (por hora)</Label>
           <div className="flex gap-2">
             <Input
               type="number"
-              placeholder="Min £"
+              placeholder="Mín €"
               value={filters.priceMin}
               onChange={(e) => handleFilterChange('priceMin', e.target.value)}
             />
             <Input
               type="number"
-              placeholder="Max £"
+              placeholder="Máx €"
               value={filters.priceMax}
               onChange={(e) => handleFilterChange('priceMax', e.target.value)}
             />
@@ -158,7 +158,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               checked={filters.verified}
               onCheckedChange={(checked) => handleFilterChange('verified', checked)}
             />
-            <Label htmlFor="verified" className="text-sm">ID Verified only</Label>
+            <Label htmlFor="verified" className="text-sm">Solo ID verificado</Label>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -167,7 +167,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               checked={filters.withPhotos}
               onCheckedChange={(checked) => handleFilterChange('withPhotos', checked)}
             />
-            <Label htmlFor="withPhotos" className="text-sm">Ads with photos</Label>
+            <Label htmlFor="withPhotos" className="text-sm">Anuncios con fotos</Label>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -176,33 +176,33 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               checked={filters.withVideo}
               onCheckedChange={(checked) => handleFilterChange('withVideo', checked)}
             />
-            <Label htmlFor="withVideo" className="text-sm">Ads with video</Label>
+            <Label htmlFor="withVideo" className="text-sm">Anuncios con video</Label>
           </div>
         </div>
 
         {/* Service Type */}
         <div className="space-y-2">
-          <Label>Service</Label>
+          <Label>Servicio</Label>
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
               <Checkbox id="incall" />
-              <Label htmlFor="incall" className="text-sm">Incall</Label>
+              <Label htmlFor="incall" className="text-sm">En mi lugar</Label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox id="outcall" />
-              <Label htmlFor="outcall" className="text-sm">Outcall</Label>
+              <Label htmlFor="outcall" className="text-sm">A domicilio</Label>
             </div>
           </div>
         </div>
 
         {/* Search Button */}
         <Button className="w-full bg-green-600 hover:bg-green-700">
-          Search
+          Buscar
         </Button>
 
         {/* Clear Filters */}
         <Button variant="outline" onClick={clearFilters} className="w-full">
-          Clear Filters
+          Limpiar filtros
         </Button>
       </CardContent>
     </Card>

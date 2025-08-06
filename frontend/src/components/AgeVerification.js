@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const AgeVerification = ({ onVerify }) => {
   const handleTakeBack = () => {
-    window.location.href = 'https://www.google.com';
+    window.location.href = 'https://www.google.es';
   };
 
   return (
@@ -20,26 +20,26 @@ const AgeVerification = ({ onVerify }) => {
         <div className="text-center space-y-6">
           <div className="bg-blue-50 border-l-4 border-blue-400 p-4 text-left">
             <p className="text-gray-700">
-              We use strictly necessary cookies on our website. We would also like to use additional cookies but we need your
-              consent to this. We will only set additional cookies if you agree.
+              Utilizamos cookies estrictamente necesarias en nuestro sitio web. También nos gustaría utilizar cookies adicionales pero necesitamos su
+              consentimiento para esto. Solo estableceremos cookies adicionales si está de acuerdo.
             </p>
           </div>
 
           <div className="bg-red-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
-              Get verified
+              Verificación de edad
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed">
-              This part of the Site is intended for those aged 18 and above, and users will be prompted to verify their age to access any content of a sexual nature.
+              Esta parte del sitio está destinada a personas mayores de 18 años, y se pedirá a los usuarios que verifiquen su edad para acceder a cualquier contenido de naturaleza sexual.
             </p>
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Terms and Conditions</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Términos y Condiciones</h3>
             <p className="text-gray-600 text-sm">
-              To access this category, you confirm that you have read and agree to the{' '}
-              <a href="#" className="text-blue-500 hover:underline">Terms and Conditions</a> and{' '}
-              <a href="#" className="text-blue-500 hover:underline">Privacy Policy</a>
+              Para acceder a esta categoría, confirmas que has leído y aceptas los{' '}
+              <a href="#" className="text-blue-500 hover:underline">Términos y Condiciones</a> y la{' '}
+              <a href="#" className="text-blue-500 hover:underline">Política de Privacidad</a>
             </p>
           </div>
 
@@ -50,13 +50,13 @@ const AgeVerification = ({ onVerify }) => {
               onClick={handleTakeBack}
               className="px-8 py-3"
             >
-              Take Me Back
+              Llévame de vuelta
             </Button>
             <Button
               onClick={onVerify}
               className="bg-green-600 hover:bg-green-700 px-8 py-3"
             >
-              I Agree
+              Estoy de acuerdo
             </Button>
           </div>
         </div>

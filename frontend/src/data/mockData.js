@@ -1,114 +1,114 @@
-// Mock data for the Vivastreet clone
+// Mock data for the Vivastreet clone - Spanish version
 
 export const mockProfiles = [
   {
     id: 1,
-    name: "Sofia",
+    name: "Sofía",
     age: 23,
-    location: "London",
-    description: "Elegant and sophisticated companion available for discerning gentlemen. I offer a premium experience with excellent service.",
+    location: "Madrid",
+    description: "Acompañante elegante y sofisticada disponible para caballeros exigentes. Ofrezco una experiencia premium con excelente servicio.",
     images: ["https://via.placeholder.com/400x500/e5e7eb/6b7280?text=Sofia", "https://via.placeholder.com/400x500/f3f4f6/9ca3af?text=Sofia+2"],
     verified: true,
     featured: true,
     online: true,
-    incall: "£150/h",
-    outcall: "£200/h",
-    services: ["Girlfriend Experience", "Dinner Dates", "Travel Companion"],
-    ethnicity: "European",
-    category: "Independent"
+    incall: "€150/h",
+    outcall: "€200/h",
+    services: ["Experiencia de Novia", "Cenas", "Acompañante de Viaje"],
+    ethnicity: "Europea",
+    category: "Independiente"
   },
   {
     id: 2,
     name: "Maya",
     age: 26,
-    location: "Manchester",
-    description: "Beautiful Asian companion offering discrete and professional service. Available for both incall and outcall.",
+    location: "Barcelona",
+    description: "Hermosa acompañante asiática que ofrece servicio discreto y profesional. Disponible tanto para servicio a domicilio como en mi lugar.",
     images: ["https://via.placeholder.com/400x500/fef3c7/f59e0b?text=Maya", "https://via.placeholder.com/400x500/fef3c7/f59e0b?text=Maya+2"],
     verified: true,
     featured: false,
     online: false,
-    incall: "£120/h",
-    outcall: "£160/h",
-    services: ["Girlfriend Experience", "Massage", "Role Play"],
-    ethnicity: "Asian",
-    category: "Independent"
+    incall: "€120/h",
+    outcall: "€160/h",
+    services: ["Experiencia de Novia", "Masajes", "Juegos de Rol"],
+    ethnicity: "Asiática",
+    category: "Independiente"
   },
   {
     id: 3,
     name: "Isabella",
     age: 28,
-    location: "Birmingham",
-    description: "Stunning brunette with a warm personality. Perfect for social events and private encounters.",
+    location: "Valencia",
+    description: "Morena impresionante con personalidad cálida. Perfecta para eventos sociales y encuentros privados.",
     images: ["https://via.placeholder.com/400x500/fce7f3/ec4899?text=Isabella", "https://via.placeholder.com/400x500/fce7f3/ec4899?text=Isabella+2"],
     verified: true,
     featured: true,
     online: true,
-    incall: "£180/h",
-    outcall: "£220/h",
-    services: ["Girlfriend Experience", "Dinner Dates", "Party Companion"],
-    ethnicity: "Latin",
-    category: "Agency"
+    incall: "€180/h",
+    outcall: "€220/h",
+    services: ["Experiencia de Novia", "Cenas", "Acompañante de Fiestas"],
+    ethnicity: "Latina",
+    category: "Agencia"
   },
   {
     id: 4,
     name: "Emma",
     age: 24,
-    location: "Leeds",
-    description: "Young and energetic companion with a bubbly personality. Available for various occasions.",
+    location: "Sevilla",
+    description: "Joven y enérgica acompañante con personalidad burbujeante. Disponible para varias ocasiones.",
     images: ["https://via.placeholder.com/400x500/dbeafe/3b82f6?text=Emma", "https://via.placeholder.com/400x500/dbeafe/3b82f6?text=Emma+2"],
     verified: false,
     featured: false,
     online: true,
-    incall: "£100/h",
-    outcall: "£140/h",
-    services: ["Girlfriend Experience", "Party Companion"],
-    ethnicity: "European",
-    category: "Independent"
+    incall: "€100/h",
+    outcall: "€140/h",
+    services: ["Experiencia de Novia", "Acompañante de Fiestas"],
+    ethnicity: "Europea",
+    category: "Independiente"
   },
   {
     id: 5,
     name: "Aria",
     age: 25,
-    location: "Glasgow",
-    description: "Sophisticated and elegant companion available for upscale clientele. Discretion guaranteed.",
+    location: "Bilbao",
+    description: "Acompañante sofisticada y elegante disponible para clientela exclusiva. Discreción garantizada.",
     images: ["https://via.placeholder.com/400x500/dcfce7/16a34a?text=Aria", "https://via.placeholder.com/400x500/dcfce7/16a34a?text=Aria+2"],
     verified: true,
     featured: true,
     online: false,
-    incall: "£200/h",
-    outcall: "£250/h",
-    services: ["Girlfriend Experience", "Dinner Dates", "Travel Companion", "Business Events"],
-    ethnicity: "European",
-    category: "Independent"
+    incall: "€200/h",
+    outcall: "€250/h",
+    services: ["Experiencia de Novia", "Cenas", "Acompañante de Viaje", "Eventos de Negocios"],
+    ethnicity: "Europea",
+    category: "Independiente"
   },
   {
     id: 6,
     name: "Zara",
     age: 22,
-    location: "Liverpool",
-    description: "Young and vibrant companion with an adventurous spirit. Perfect for those seeking excitement.",
+    location: "Málaga",
+    description: "Joven y vibrante acompañante con espíritu aventurero. Perfecta para quienes buscan emoción.",
     images: ["https://via.placeholder.com/400x500/f3e8ff/8b5cf6?text=Zara", "https://via.placeholder.com/400x500/f3e8ff/8b5cf6?text=Zara+2"],
     verified: true,
     featured: false,
     online: true,
-    incall: "£110/h",
-    outcall: "£150/h",
-    services: ["Girlfriend Experience", "Role Play", "Party Companion"],
-    ethnicity: "Mixed",
-    category: "Independent"
+    incall: "€110/h",
+    outcall: "€150/h",
+    services: ["Experiencia de Novia", "Juegos de Rol", "Acompañante de Fiestas"],
+    ethnicity: "Mixta",
+    category: "Independiente"
   }
 ];
 
 export const mockLocations = [
-  "London", "Manchester", "Birmingham", "Leeds", "Glasgow", "Liverpool", 
-  "Sheffield", "Bristol", "Newcastle", "Nottingham"
+  "Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao", "Málaga", 
+  "Zaragoza", "Murcia", "Palma de Mallorca", "Las Palmas", "Córdoba", "Alicante"
 ];
 
 export const mockServices = [
-  "Girlfriend Experience", "Dinner Dates", "Travel Companion", 
-  "Party Companion", "Massage", "Role Play", "Business Events"
+  "Experiencia de Novia", "Cenas", "Acompañante de Viaje", 
+  "Acompañante de Fiestas", "Masajes", "Juegos de Rol", "Eventos de Negocios"
 ];
 
 export const mockEthnicities = [
-  "European", "Asian", "Latin", "African", "Mixed", "Arab", "Indian"
+  "Europea", "Asiática", "Latina", "Africana", "Mixta", "Árabe", "India"
 ];

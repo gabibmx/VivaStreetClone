@@ -38,10 +38,10 @@ const Header = () => {
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
               <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-                Browse
+                Explorar
               </Link>
               <Link to="/help" className="text-gray-600 hover:text-gray-900 transition-colors">
-                Help
+                Ayuda
               </Link>
             </nav>
 
@@ -53,7 +53,7 @@ const Header = () => {
                     variant="outline"
                     className="bg-orange-500 text-white border-orange-500 hover:bg-orange-600"
                   >
-                    Post your ad
+                    Publicar anuncio
                   </Button>
                   
                   <DropdownMenu>
@@ -67,12 +67,12 @@ const Header = () => {
                       <DropdownMenuItem asChild>
                         <Link to="/dashboard" className="flex items-center">
                           <Settings className="h-4 w-4 mr-2" />
-                          Dashboard
+                          Panel de control
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem onClick={logout}>
                         <LogOut className="h-4 w-4 mr-2" />
-                        Logout
+                        Cerrar sesión
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -83,7 +83,7 @@ const Header = () => {
                     variant="outline"
                     className="bg-orange-500 text-white border-orange-500 hover:bg-orange-600"
                   >
-                    Post your ad
+                    Publicar anuncio
                   </Button>
                   
                   <div className="hidden md:flex items-center space-x-2">
@@ -95,7 +95,7 @@ const Header = () => {
                           onClick={() => handleShowAuth('login', 'customer')}
                           className="text-sm"
                         >
-                          Customer Login
+                          Iniciar sesión cliente
                         </Button>
                         <Button 
                           variant="ghost" 
@@ -103,7 +103,7 @@ const Header = () => {
                           onClick={() => handleShowAuth('signup', 'customer')}
                           className="text-sm"
                         >
-                          Customer Sign Up
+                          Registrarse cliente
                         </Button>
                       </div>
                       <div className="flex space-x-2">
@@ -113,7 +113,7 @@ const Header = () => {
                           onClick={() => handleShowAuth('login', 'model')}
                           className="text-sm text-green-600"
                         >
-                          Model Login
+                          Iniciar sesión modelo
                         </Button>
                         <Button 
                           variant="ghost" 
@@ -121,7 +121,7 @@ const Header = () => {
                           onClick={() => handleShowAuth('signup', 'model')}
                           className="text-sm text-green-600"
                         >
-                          Model Sign Up
+                          Registrarse modelo
                         </Button>
                       </div>
                     </div>
@@ -133,7 +133,7 @@ const Header = () => {
                       variant="outline"
                       onClick={() => handleShowAuth('login', 'customer')}
                     >
-                      Sign In
+                      Iniciar sesión
                     </Button>
                   </div>
                 </div>
