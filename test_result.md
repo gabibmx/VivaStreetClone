@@ -354,7 +354,7 @@ test_plan:
   current_focus: []
   stuck_tasks: []
   test_all: true
-  test_priority: "completed"
+  test_priority: "completed_spanish"
 
 agent_communication:
   - agent: "testing"
