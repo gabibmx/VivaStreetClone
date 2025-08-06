@@ -53,15 +53,15 @@ const HomePage = () => {
         break;
       case 'price-low':
         filtered.sort((a, b) => {
-          const priceA = parseInt(a.incall.replace(/[£\/h]/g, ''));
-          const priceB = parseInt(b.incall.replace(/[£\/h]/g, ''));
+          const priceA = parseInt(a.incall.replace(/[€\/h]/g, ''));
+          const priceB = parseInt(b.incall.replace(/[€\/h]/g, ''));
           return priceA - priceB;
         });
         break;
       case 'price-high':
         filtered.sort((a, b) => {
-          const priceA = parseInt(a.incall.replace(/[£\/h]/g, ''));
-          const priceB = parseInt(b.incall.replace(/[£\/h]/g, ''));
+          const priceA = parseInt(a.incall.replace(/[€\/h]/g, ''));
+          const priceB = parseInt(b.incall.replace(/[€\/h]/g, ''));
           return priceB - priceA;
         });
         break;
@@ -78,9 +78,9 @@ const HomePage = () => {
       <div className="bg-red-50 border-l-4 border-red-400 p-4">
         <div className="container mx-auto px-4">
           <p className="text-sm text-red-700">
-            <strong>Contact Ads As Normal</strong> - You can still contact all advertisers on Vivastreet, 
-            whether their images are blurred or not. To reveal blurred images, confirm that you're 18+ now, 
-            then create a Lite account and never have to age check again.
+            <strong>Contactar anuncios como siempre</strong> - Aún puedes contactar a todos los anunciantes en Vivastreet, 
+            ya sea que sus imágenes estén borrosas o no. Para revelar imágenes borrosas, confirma que tienes más de 18 años ahora, 
+            luego crea una cuenta Lite y nunca tendrás que verificar tu edad de nuevo.
           </p>
         </div>
       </div>
@@ -104,14 +104,14 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                   <h1 className="text-xl font-semibold text-gray-900">
-                    {filteredProfiles.length} results in UK Escorts & Erotic Massage
+                    {filteredProfiles.length} resultados en Escorts de España y Masaje Erótico
                   </h1>
                   <div className="flex items-center space-x-4 mt-2">
                     <span className="text-sm text-gray-600 px-3 py-1 bg-gray-100 rounded">
-                      Independent
+                      Independiente
                     </span>
                     <span className="text-sm text-gray-600 px-3 py-1 bg-gray-100 rounded">
-                      Agency
+                      Agencia
                     </span>
                   </div>
                 </div>
@@ -141,10 +141,10 @@ const HomePage = () => {
                     onChange={(e) => setSortBy(e.target.value)}
                     className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
                   >
-                    <option value="featured">Sort by: Featured</option>
-                    <option value="newest">Sort by: Newest</option>
-                    <option value="price-low">Sort by: Price (Low to High)</option>
-                    <option value="price-high">Sort by: Price (High to Low)</option>
+                    <option value="featured">Ordenar por: Destacados</option>
+                    <option value="newest">Ordenar por: Más recientes</option>
+                    <option value="price-low">Ordenar por: Precio (Bajo a Alto)</option>
+                    <option value="price-high">Ordenar por: Precio (Alto a Bajo)</option>
                   </select>
                 </div>
               </div>
@@ -153,7 +153,7 @@ const HomePage = () => {
             {/* VIP Ads */}
             <div className="mb-6">
               <div className="bg-orange-100 border border-orange-300 rounded-lg p-2 mb-4">
-                <span className="text-orange-700 font-semibold text-sm">VIP ads</span>
+                <span className="text-orange-700 font-semibold text-sm">Anuncios VIP</span>
               </div>
             </div>
 
@@ -174,8 +174,8 @@ const HomePage = () => {
 
             {filteredProfiles.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No profiles found matching your criteria.</p>
-                <p className="text-gray-400 mt-2">Try adjusting your filters or search terms.</p>
+                <p className="text-gray-500 text-lg">No se encontraron perfiles que coincidan con tus criterios.</p>
+                <p className="text-gray-400 mt-2">Intenta ajustar tus filtros o términos de búsqueda.</p>
               </div>
             )}
           </div>

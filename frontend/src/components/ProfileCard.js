@@ -18,7 +18,7 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
     e.preventDefault();
     e.stopPropagation();
     // Mock contact action
-    alert(`Contacting ${profile.name}...`);
+    alert(`Contactando con ${profile.name}...`);
   };
 
   if (viewMode === 'list') {
@@ -40,12 +40,12 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
                   {profile.verified && (
                     <Badge className="bg-green-600 text-white text-xs px-2 py-1">
                       <Shield className="h-3 w-3 mr-1" />
-                      ID Verified
+                      ID Verificado
                     </Badge>
                   )}
                   {profile.featured && (
                     <Badge className="bg-orange-500 text-white text-xs px-2 py-1">
-                      FEATURED
+                      DESTACADO
                     </Badge>
                   )}
                 </div>
@@ -69,7 +69,7 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
                 {profile.online && (
                   <div className="absolute bottom-2 right-2 flex items-center bg-green-500 text-white px-2 py-1 rounded text-xs">
                     <Clock className="h-3 w-3 mr-1" />
-                    Online
+                    En línea
                   </div>
                 )}
               </div>
@@ -79,7 +79,7 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">{profile.name}</h3>
-                    <p className="text-sm text-gray-600 mb-2">{profile.age} years old • {profile.category} • {profile.ethnicity}</p>
+                    <p className="text-sm text-gray-600 mb-2">{profile.age} años • {profile.category} • {profile.ethnicity}</p>
                     
                     <div className="flex items-center text-sm text-gray-600 mb-3">
                       <MapPin className="h-4 w-4 mr-1" />
@@ -89,19 +89,19 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
                     <p className="text-sm text-gray-700 mb-3 line-clamp-2">{profile.description}</p>
 
                     <div className="flex items-center gap-4 text-sm">
-                      <span><strong>Incall:</strong> {profile.incall}</span>
-                      <span><strong>Outcall:</strong> {profile.outcall}</span>
+                      <span><strong>En mi lugar:</strong> {profile.incall}</span>
+                      <span><strong>A domicilio:</strong> {profile.outcall}</span>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2 ml-4">
                     <Button size="sm" variant="outline" onClick={handleContact}>
                       <Phone className="h-4 w-4 mr-2" />
-                      Call
+                      Llamar
                     </Button>
                     <Button size="sm" variant="outline" onClick={handleContact}>
                       <MessageCircle className="h-4 w-4 mr-2" />
-                      Message
+                      Mensaje
                     </Button>
                   </div>
                 </div>
@@ -130,12 +130,12 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
               {profile.verified && (
                 <Badge className="bg-green-600 text-white text-xs px-2 py-1">
                   <Shield className="h-3 w-3 mr-1" />
-                  ID Verified
+                  ID Verificado
                 </Badge>
               )}
               {profile.featured && (
                 <Badge className="bg-orange-500 text-white text-xs px-2 py-1">
-                  FEATURED
+                  DESTACADO
                 </Badge>
               )}
             </div>
@@ -159,7 +159,7 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
             {profile.online && (
               <div className="absolute bottom-2 right-2 flex items-center bg-green-500 text-white px-2 py-1 rounded text-xs">
                 <Clock className="h-3 w-3 mr-1" />
-                Online
+                En línea
               </div>
             )}
           </div>
@@ -167,7 +167,7 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
           {/* Content */}
           <div className="p-4">
             <h3 className="font-semibold text-lg text-gray-900 mb-1">{profile.name}</h3>
-            <p className="text-sm text-gray-600 mb-2">{profile.age} years old • {profile.category}</p>
+            <p className="text-sm text-gray-600 mb-2">{profile.age} años • {profile.category}</p>
             
             <div className="flex items-center text-sm text-gray-600 mb-3">
               <MapPin className="h-4 w-4 mr-1" />
@@ -175,18 +175,18 @@ const ProfileCard = ({ profile, viewMode = 'grid' }) => {
             </div>
 
             <div className="flex items-center justify-between text-sm mb-3">
-              <span><strong>Incall:</strong> {profile.incall}</span>
-              <span><strong>Outcall:</strong> {profile.outcall}</span>
+              <span><strong>En mi lugar:</strong> {profile.incall}</span>
+              <span><strong>A domicilio:</strong> {profile.outcall}</span>
             </div>
 
             <div className="flex gap-2">
               <Button size="sm" variant="outline" onClick={handleContact} className="flex-1">
                 <Phone className="h-4 w-4 mr-1" />
-                Call
+                Llamar
               </Button>
               <Button size="sm" variant="outline" onClick={handleContact} className="flex-1">
                 <MessageCircle className="h-4 w-4 mr-1" />
-                Message
+                Mensaje
               </Button>
             </div>
           </div>

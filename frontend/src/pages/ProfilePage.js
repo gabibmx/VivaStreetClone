@@ -20,9 +20,9 @@ const ProfilePage = () => {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Profile not found</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Perfil no encontrado</h1>
           <Link to="/">
-            <Button>Back to Browse</Button>
+            <Button>Volver a explorar</Button>
           </Link>
         </div>
       </div>
@@ -42,7 +42,7 @@ const ProfilePage = () => {
   };
 
   const handleContact = (type) => {
-    alert(`Contacting ${profile.name} via ${type}...`);
+    alert(`Contactando con ${profile.name} vía ${type}...`);
   };
 
   return (
@@ -53,7 +53,7 @@ const ProfilePage = () => {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center text-gray-600 hover:text-gray-900">
               <ArrowLeft className="h-5 w-5 mr-2" />
-              Back to Browse
+              Volver a explorar
             </Link>
             
             <div className="flex items-center space-x-3">
@@ -63,15 +63,15 @@ const ProfilePage = () => {
                 onClick={() => setIsFavorite(!isFavorite)}
               >
                 <Heart className={`h-4 w-4 mr-2 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
-                Save
+                Guardar
               </Button>
               <Button variant="ghost" size="sm">
                 <Share2 className="h-4 w-4 mr-2" />
-                Share
+                Compartir
               </Button>
               <Button variant="ghost" size="sm">
                 <Flag className="h-4 w-4 mr-2" />
-                Report
+                Reportar
               </Button>
             </div>
           </div>
@@ -88,7 +88,7 @@ const ProfilePage = () => {
                 <div className="relative aspect-[4/5]">
                   <img
                     src={profile.images[currentImageIndex]}
-                    alt={`${profile.name} - Image ${currentImageIndex + 1}`}
+                    alt={`${profile.name} - Imagen ${currentImageIndex + 1}`}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                   
@@ -120,18 +120,18 @@ const ProfilePage = () => {
                     {profile.verified && (
                       <Badge className="bg-green-600 text-white">
                         <Shield className="h-4 w-4 mr-2" />
-                        ID Verified
+                        ID Verificado
                       </Badge>
                     )}
                     {profile.featured && (
                       <Badge className="bg-orange-500 text-white">
-                        FEATURED
+                        DESTACADO
                       </Badge>
                     )}
                     {profile.online && (
                       <Badge className="bg-green-500 text-white">
                         <Clock className="h-4 w-4 mr-2" />
-                        Online Now
+                        En línea ahora
                       </Badge>
                     )}
                   </div>
@@ -150,7 +150,7 @@ const ProfilePage = () => {
                       >
                         <img
                           src={image}
-                          alt={`Thumbnail ${index + 1}`}
+                          alt={`Miniatura ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
                       </button>
@@ -175,35 +175,35 @@ const ProfilePage = () => {
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <span className="text-sm text-gray-500">Age</span>
-                    <p className="font-semibold">{profile.age} years old</p>
+                    <span className="text-sm text-gray-500">Edad</span>
+                    <p className="font-semibold">{profile.age} años</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500">Ethnicity</span>
+                    <span className="text-sm text-gray-500">Etnia</span>
                     <p className="font-semibold">{profile.ethnicity}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500">Category</span>
+                    <span className="text-sm text-gray-500">Categoría</span>
                     <p className="font-semibold">{profile.category}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500">Status</span>
+                    <span className="text-sm text-gray-500">Estado</span>
                     <p className={`font-semibold ${profile.online ? 'text-green-600' : 'text-gray-500'}`}>
-                      {profile.online ? 'Online' : 'Offline'}
+                      {profile.online ? 'En línea' : 'Desconectada'}
                     </p>
                   </div>
                 </div>
 
                 {/* Rates */}
                 <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                  <h3 className="font-semibold mb-3">Rates</h3>
+                  <h3 className="font-semibold mb-3">Tarifas</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <span className="text-sm text-gray-500">Incall</span>
+                      <span className="text-sm text-gray-500">En mi lugar</span>
                       <p className="font-semibold text-lg">{profile.incall}</p>
                     </div>
                     <div>
-                      <span className="text-sm text-gray-500">Outcall</span>
+                      <span className="text-sm text-gray-500">A domicilio</span>
                       <p className="font-semibold text-lg">{profile.outcall}</p>
                     </div>
                   </div>
@@ -213,26 +213,26 @@ const ProfilePage = () => {
                 <div className="space-y-3">
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700"
-                    onClick={() => handleContact('phone')}
+                    onClick={() => handleContact('teléfono')}
                   >
                     <Phone className="h-4 w-4 mr-2" />
-                    Call Now
+                    Llamar ahora
                   </Button>
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => handleContact('message')}
+                    onClick={() => handleContact('mensaje')}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
-                    Send Message
+                    Enviar mensaje
                   </Button>
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => handleContact('calendar')}
+                    onClick={() => handleContact('cita')}
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    Book Appointment
+                    Reservar cita
                   </Button>
                 </div>
               </CardContent>
@@ -241,7 +241,7 @@ const ProfilePage = () => {
             {/* Services */}
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-3">Services Offered</h3>
+                <h3 className="font-semibold mb-3">Servicios ofrecidos</h3>
                 <div className="flex flex-wrap gap-2">
                   {profile.services.map(service => (
                     <Badge key={service} variant="secondary">
@@ -260,9 +260,9 @@ const ProfilePage = () => {
             <CardContent className="p-6">
               <Tabs defaultValue="description" className="w-full">
                 <TabsList>
-                  <TabsTrigger value="description">Description</TabsTrigger>
-                  <TabsTrigger value="reviews">Reviews</TabsTrigger>
-                  <TabsTrigger value="availability">Availability</TabsTrigger>
+                  <TabsTrigger value="description">Descripción</TabsTrigger>
+                  <TabsTrigger value="reviews">Reseñas</TabsTrigger>
+                  <TabsTrigger value="availability">Disponibilidad</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="description" className="mt-6">
@@ -271,20 +271,20 @@ const ProfilePage = () => {
                     
                     <div className="mt-6 grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold mb-3">About Me</h4>
+                        <h4 className="font-semibold mb-3">Sobre mí</h4>
                         <p className="text-gray-600 text-sm">
-                          I'm a professional and discreet companion who enjoys meeting new people and creating 
-                          memorable experiences. I take pride in providing excellent service and ensuring my 
-                          clients feel comfortable and satisfied.
+                          Soy una acompañante profesional y discreta que disfruta conocer gente nueva y crear 
+                          experiencias memorables. Me enorgullezco de brindar un excelente servicio y asegurarme de que mis 
+                          clientes se sientan cómodos y satisfechos.
                         </p>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">What I Offer</h4>
+                        <h4 className="font-semibold mb-3">Lo que ofrezco</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
-                          <li>• Professional and discreet service</li>
-                          <li>• Excellent hygiene and presentation</li>
-                          <li>• Punctual and reliable</li>
-                          <li>• Safe and clean environment</li>
+                          <li>• Servicio profesional y discreto</li>
+                          <li>• Excelente higiene y presentación</li>
+                          <li>• Puntual y confiable</li>
+                          <li>• Ambiente seguro y limpio</li>
                         </ul>
                       </div>
                     </div>
@@ -294,11 +294,11 @@ const ProfilePage = () => {
                 <TabsContent value="reviews" className="mt-6">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <h4 className="font-semibold">Customer Reviews</h4>
+                      <h4 className="font-semibold">Reseñas de clientes</h4>
                       <div className="flex items-center">
                         <Star className="h-5 w-5 text-yellow-400 fill-current" />
                         <span className="ml-1 font-semibold">4.8</span>
-                        <span className="ml-1 text-gray-500">(24 reviews)</span>
+                        <span className="ml-1 text-gray-500">(24 reseñas)</span>
                       </div>
                     </div>
                     
@@ -312,12 +312,12 @@ const ProfilePage = () => {
                                   <Star key={i} className="h-4 w-4 fill-current" />
                                 ))}
                               </div>
-                              <span className="ml-2 text-sm text-gray-500">Anonymous</span>
+                              <span className="ml-2 text-sm text-gray-500">Anónimo</span>
                             </div>
-                            <span className="text-sm text-gray-500">2 days ago</span>
+                            <span className="text-sm text-gray-500">hace 2 días</span>
                           </div>
                           <p className="text-gray-700 text-sm">
-                            Excellent service and very professional. Would definitely recommend and visit again.
+                            Excelente servicio y muy profesional. Definitivamente recomendaría y visitaría de nuevo.
                           </p>
                         </div>
                       ))}
@@ -327,35 +327,35 @@ const ProfilePage = () => {
                 
                 <TabsContent value="availability" className="mt-6">
                   <div>
-                    <h4 className="font-semibold mb-3">Availability</h4>
+                    <h4 className="font-semibold mb-3">Disponibilidad</h4>
                     <div className="grid gap-2 text-sm">
                       <div className="flex justify-between py-2 border-b">
-                        <span>Monday</span>
-                        <span className="text-green-600">9:00 AM - 11:00 PM</span>
+                        <span>Lunes</span>
+                        <span className="text-green-600">9:00 - 23:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Tuesday</span>
-                        <span className="text-green-600">9:00 AM - 11:00 PM</span>
+                        <span>Martes</span>
+                        <span className="text-green-600">9:00 - 23:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Wednesday</span>
-                        <span className="text-green-600">9:00 AM - 11:00 PM</span>
+                        <span>Miércoles</span>
+                        <span className="text-green-600">9:00 - 23:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Thursday</span>
-                        <span className="text-green-600">9:00 AM - 11:00 PM</span>
+                        <span>Jueves</span>
+                        <span className="text-green-600">9:00 - 23:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Friday</span>
-                        <span className="text-green-600">9:00 AM - 12:00 AM</span>
+                        <span>Viernes</span>
+                        <span className="text-green-600">9:00 - 00:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Saturday</span>
-                        <span className="text-green-600">10:00 AM - 12:00 AM</span>
+                        <span>Sábado</span>
+                        <span className="text-green-600">10:00 - 00:00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span>Sunday</span>
-                        <span className="text-red-600">Closed</span>
+                        <span>Domingo</span>
+                        <span className="text-red-600">Cerrado</span>
                       </div>
                     </div>
                   </div>

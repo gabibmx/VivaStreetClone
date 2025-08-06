@@ -17,13 +17,13 @@ const Dashboard = () => {
   const [profile, setProfile] = useState({
     name: currentUser?.name || '',
     age: '25',
-    location: 'London',
-    description: 'Professional and discreet companion...',
+    location: 'Madrid',
+    description: 'Acompañante profesional y discreta...',
     phone: currentUser?.phone || '',
     email: currentUser?.email || '',
-    services: ['Girlfriend Experience', 'Dinner Dates'],
-    incall: '£150/h',
-    outcall: '£200/h'
+    services: ['Experiencia de Novia', 'Cenas'],
+    incall: '€150/h',
+    outcall: '€200/h'
   });
 
   const mockStats = {
@@ -36,21 +36,21 @@ const Dashboard = () => {
   };
 
   const mockMessages = [
-    { id: 1, sender: 'John D.', message: 'Hi, I would like to book an appointment...', time: '2 hours ago', unread: true },
-    { id: 2, sender: 'Mike S.', message: 'Thank you for the great service!', time: '1 day ago', unread: false },
-    { id: 3, sender: 'David L.', message: 'Are you available tomorrow evening?', time: '2 days ago', unread: false }
+    { id: 1, sender: 'Juan D.', message: 'Hola, me gustaría reservar una cita...', time: 'hace 2 horas', unread: true },
+    { id: 2, sender: 'Miguel S.', message: '¡Gracias por el excelente servicio!', time: 'hace 1 día', unread: false },
+    { id: 3, sender: 'David L.', message: '¿Estás disponible mañana por la noche?', time: 'hace 2 días', unread: false }
   ];
 
   const mockBookings = [
-    { id: 1, client: 'Anonymous', date: '2024-01-15', time: '7:00 PM', status: 'confirmed', type: 'Outcall' },
-    { id: 2, client: 'Anonymous', date: '2024-01-18', time: '3:00 PM', status: 'pending', type: 'Incall' },
-    { id: 3, client: 'Anonymous', date: '2024-01-20', time: '8:00 PM', status: 'completed', type: 'Outcall' }
+    { id: 1, client: 'Anónimo', date: '15/01/2024', time: '19:00', status: 'confirmado', type: 'A domicilio' },
+    { id: 2, client: 'Anónimo', date: '18/01/2024', time: '15:00', status: 'pendiente', type: 'En mi lugar' },
+    { id: 3, client: 'Anónimo', date: '20/01/2024', time: '20:00', status: 'completado', type: 'A domicilio' }
   ];
 
   const handleProfileUpdate = (e) => {
     e.preventDefault();
     // Mock profile update
-    alert('Profile updated successfully!');
+    alert('¡Perfil actualizado correctamente!');
   };
 
   const handleInputChange = (field, value) => {
@@ -65,8 +65,8 @@ const Dashboard = () => {
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Customer Dashboard</h1>
-            <p className="text-gray-600">Welcome back, {currentUser?.name}</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Panel de Cliente</h1>
+            <p className="text-gray-600">Bienvenido de nuevo, {currentUser?.name}</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-6">
@@ -76,28 +76,28 @@ const Dashboard = () => {
                 <CardContent className="p-4 text-center">
                   <Heart className="h-8 w-8 mx-auto text-red-500 mb-2" />
                   <p className="text-2xl font-bold">12</p>
-                  <p className="text-sm text-gray-600">Favorites</p>
+                  <p className="text-sm text-gray-600">Favoritos</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4 text-center">
                   <MessageCircle className="h-8 w-8 mx-auto text-blue-500 mb-2" />
                   <p className="text-2xl font-bold">5</p>
-                  <p className="text-sm text-gray-600">Messages</p>
+                  <p className="text-sm text-gray-600">Mensajes</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4 text-center">
                   <Calendar className="h-8 w-8 mx-auto text-green-500 mb-2" />
                   <p className="text-2xl font-bold">3</p>
-                  <p className="text-sm text-gray-600">Bookings</p>
+                  <p className="text-sm text-gray-600">Reservas</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4 text-center">
                   <Star className="h-8 w-8 mx-auto text-yellow-500 mb-2" />
                   <p className="text-2xl font-bold">4.9</p>
-                  <p className="text-sm text-gray-600">Reviews Given</p>
+                  <p className="text-sm text-gray-600">Reseñas dadas</p>
                 </CardContent>
               </Card>
             </div>
@@ -105,15 +105,15 @@ const Dashboard = () => {
             <div className="lg:col-span-2">
               <Tabs defaultValue="favorites" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="favorites">Favorites</TabsTrigger>
-                  <TabsTrigger value="messages">Messages</TabsTrigger>
-                  <TabsTrigger value="bookings">Bookings</TabsTrigger>
+                  <TabsTrigger value="favorites">Favoritos</TabsTrigger>
+                  <TabsTrigger value="messages">Mensajes</TabsTrigger>
+                  <TabsTrigger value="bookings">Reservas</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="favorites" className="mt-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Your Favorite Profiles</CardTitle>
+                      <CardTitle>Tus perfiles favoritos</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
@@ -122,12 +122,12 @@ const Dashboard = () => {
                             <div className="flex items-center space-x-4">
                               <div className="w-16 h-16 bg-gray-200 rounded-lg"></div>
                               <div>
-                                <h4 className="font-semibold">Sofia</h4>
-                                <p className="text-sm text-gray-600">London • 23 years old</p>
-                                <p className="text-sm text-green-600">Online now</p>
+                                <h4 className="font-semibold">Sofía</h4>
+                                <p className="text-sm text-gray-600">Madrid • 23 años</p>
+                                <p className="text-sm text-green-600">En línea ahora</p>
                               </div>
                             </div>
-                            <Button size="sm">Contact</Button>
+                            <Button size="sm">Contactar</Button>
                           </div>
                         ))}
                       </div>
@@ -138,7 +138,7 @@ const Dashboard = () => {
                 <TabsContent value="messages" className="mt-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Recent Messages</CardTitle>
+                      <CardTitle>Mensajes recientes</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
@@ -146,7 +146,7 @@ const Dashboard = () => {
                           <div key={msg.id} className={`p-4 border rounded-lg ${msg.unread ? 'bg-blue-50 border-blue-200' : ''}`}>
                             <div className="flex justify-between items-start">
                               <div>
-                                <h4 className="font-semibold">From: {msg.sender}</h4>
+                                <h4 className="font-semibold">De: {msg.sender}</h4>
                                 <p className="text-sm text-gray-600 mt-1">{msg.message}</p>
                               </div>
                               <span className="text-xs text-gray-500">{msg.time}</span>
@@ -161,7 +161,7 @@ const Dashboard = () => {
                 <TabsContent value="bookings" className="mt-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Your Bookings</CardTitle>
+                      <CardTitle>Tus reservas</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
@@ -169,13 +169,13 @@ const Dashboard = () => {
                           <div key={booking.id} className="p-4 border rounded-lg">
                             <div className="flex justify-between items-start">
                               <div>
-                                <h4 className="font-semibold">Booking with {booking.client}</h4>
-                                <p className="text-sm text-gray-600">{booking.date} at {booking.time}</p>
+                                <h4 className="font-semibold">Reserva con {booking.client}</h4>
+                                <p className="text-sm text-gray-600">{booking.date} a las {booking.time}</p>
                                 <p className="text-sm text-gray-600">{booking.type}</p>
                               </div>
                               <Badge variant={
-                                booking.status === 'confirmed' ? 'default' : 
-                                booking.status === 'pending' ? 'secondary' : 'outline'
+                                booking.status === 'confirmado' ? 'default' : 
+                                booking.status === 'pendiente' ? 'secondary' : 'outline'
                               }>
                                 {booking.status}
                               </Badge>
@@ -193,22 +193,22 @@ const Dashboard = () => {
             <div>
               <Card>
                 <CardHeader>
-                  <CardTitle>Account Settings</CardTitle>
+                  <CardTitle>Configuración de cuenta</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="customer-name">Name</Label>
+                    <Label htmlFor="customer-name">Nombre</Label>
                     <Input id="customer-name" value={currentUser?.name || ''} />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="customer-email">Email</Label>
+                    <Label htmlFor="customer-email">Correo electrónico</Label>
                     <Input id="customer-email" type="email" value={currentUser?.email || ''} />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="customer-phone">Phone</Label>
+                    <Label htmlFor="customer-phone">Teléfono</Label>
                     <Input id="customer-phone" type="tel" value={currentUser?.phone || ''} />
                   </div>
-                  <Button className="w-full">Update Settings</Button>
+                  <Button className="w-full">Actualizar configuración</Button>
                 </CardContent>
               </Card>
             </div>
@@ -222,8 +222,8 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Model Dashboard</h1>
-          <p className="text-gray-600">Welcome back, {currentUser?.name}</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Panel de Modelo</h1>
+          <p className="text-gray-600">Bienvenida de nuevo, {currentUser?.name}</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -233,35 +233,35 @@ const Dashboard = () => {
               <CardContent className="p-4 text-center">
                 <Eye className="h-8 w-8 mx-auto text-blue-500 mb-2" />
                 <p className="text-2xl font-bold">{mockStats.profileViews}</p>
-                <p className="text-sm text-gray-600">Profile Views</p>
+                <p className="text-sm text-gray-600">Vistas del perfil</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <Heart className="h-8 w-8 mx-auto text-red-500 mb-2" />
                 <p className="text-2xl font-bold">{mockStats.favorites}</p>
-                <p className="text-sm text-gray-600">Favorites</p>
+                <p className="text-sm text-gray-600">Favoritos</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <MessageCircle className="h-8 w-8 mx-auto text-green-500 mb-2" />
                 <p className="text-2xl font-bold">{mockStats.messages}</p>
-                <p className="text-sm text-gray-600">Messages</p>
+                <p className="text-sm text-gray-600">Mensajes</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <Calendar className="h-8 w-8 mx-auto text-purple-500 mb-2" />
                 <p className="text-2xl font-bold">{mockStats.bookings}</p>
-                <p className="text-sm text-gray-600">Bookings</p>
+                <p className="text-sm text-gray-600">Reservas</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <Star className="h-8 w-8 mx-auto text-yellow-500 mb-2" />
                 <p className="text-2xl font-bold">{mockStats.rating}</p>
-                <p className="text-sm text-gray-600">Rating ({mockStats.reviews})</p>
+                <p className="text-sm text-gray-600">Calificación ({mockStats.reviews})</p>
               </CardContent>
             </Card>
           </div>
@@ -269,21 +269,21 @@ const Dashboard = () => {
           <div className="lg:col-span-2">
             <Tabs defaultValue="profile" className="w-full">
               <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="profile">Profile</TabsTrigger>
-                <TabsTrigger value="messages">Messages</TabsTrigger>
-                <TabsTrigger value="bookings">Bookings</TabsTrigger>
-                <TabsTrigger value="analytics">Analytics</TabsTrigger>
+                <TabsTrigger value="profile">Perfil</TabsTrigger>
+                <TabsTrigger value="messages">Mensajes</TabsTrigger>
+                <TabsTrigger value="bookings">Reservas</TabsTrigger>
+                <TabsTrigger value="analytics">Estadísticas</TabsTrigger>
               </TabsList>
               
               <TabsContent value="profile" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Edit Profile</CardTitle>
+                    <CardTitle>Editar perfil</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleProfileUpdate} className="space-y-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
+                        <Label htmlFor="name">Nombre</Label>
                         <Input
                           id="name"
                           value={profile.name}
@@ -293,7 +293,7 @@ const Dashboard = () => {
                       
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="age">Age</Label>
+                          <Label htmlFor="age">Edad</Label>
                           <Input
                             id="age"
                             type="number"
@@ -302,7 +302,7 @@ const Dashboard = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="location">Location</Label>
+                          <Label htmlFor="location">Ubicación</Label>
                           <Input
                             id="location"
                             value={profile.location}
@@ -312,7 +312,7 @@ const Dashboard = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="description">Description</Label>
+                        <Label htmlFor="description">Descripción</Label>
                         <Textarea
                           id="description"
                           rows={4}
@@ -323,7 +323,7 @@ const Dashboard = () => {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="incall">Incall Rate</Label>
+                          <Label htmlFor="incall">Tarifa en mi lugar</Label>
                           <Input
                             id="incall"
                             value={profile.incall}
@@ -331,7 +331,7 @@ const Dashboard = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="outcall">Outcall Rate</Label>
+                          <Label htmlFor="outcall">Tarifa a domicilio</Label>
                           <Input
                             id="outcall"
                             value={profile.outcall}
@@ -341,7 +341,7 @@ const Dashboard = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Photos</Label>
+                        <Label>Fotos</Label>
                         <div className="grid grid-cols-3 gap-4">
                           <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
                             <Camera className="h-8 w-8 text-gray-400" />
@@ -353,7 +353,7 @@ const Dashboard = () => {
                       </div>
 
                       <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
-                        Update Profile
+                        Actualizar perfil
                       </Button>
                     </form>
                   </CardContent>
@@ -363,7 +363,7 @@ const Dashboard = () => {
               <TabsContent value="messages" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Messages</CardTitle>
+                    <CardTitle>Mensajes</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -371,14 +371,14 @@ const Dashboard = () => {
                         <div key={msg.id} className={`p-4 border rounded-lg ${msg.unread ? 'bg-blue-50 border-blue-200' : ''}`}>
                           <div className="flex justify-between items-start">
                             <div>
-                              <h4 className="font-semibold">From: {msg.sender}</h4>
+                              <h4 className="font-semibold">De: {msg.sender}</h4>
                               <p className="text-sm text-gray-600 mt-1">{msg.message}</p>
                             </div>
                             <span className="text-xs text-gray-500">{msg.time}</span>
                           </div>
                           <div className="mt-3 flex gap-2">
-                            <Button size="sm" variant="outline">Reply</Button>
-                            <Button size="sm" variant="outline">Archive</Button>
+                            <Button size="sm" variant="outline">Responder</Button>
+                            <Button size="sm" variant="outline">Archivar</Button>
                           </div>
                         </div>
                       ))}
@@ -390,7 +390,7 @@ const Dashboard = () => {
               <TabsContent value="bookings" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Bookings</CardTitle>
+                    <CardTitle>Reservas</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -398,23 +398,23 @@ const Dashboard = () => {
                         <div key={booking.id} className="p-4 border rounded-lg">
                           <div className="flex justify-between items-start mb-3">
                             <div>
-                              <h4 className="font-semibold">Booking with {booking.client}</h4>
-                              <p className="text-sm text-gray-600">{booking.date} at {booking.time}</p>
+                              <h4 className="font-semibold">Reserva con {booking.client}</h4>
+                              <p className="text-sm text-gray-600">{booking.date} a las {booking.time}</p>
                               <p className="text-sm text-gray-600">{booking.type}</p>
                             </div>
                             <Badge variant={
-                              booking.status === 'confirmed' ? 'default' : 
-                              booking.status === 'pending' ? 'secondary' : 'outline'
+                              booking.status === 'confirmado' ? 'default' : 
+                              booking.status === 'pendiente' ? 'secondary' : 'outline'
                             }>
                               {booking.status}
                             </Badge>
                           </div>
                           <div className="flex gap-2">
-                            <Button size="sm" variant="outline">View Details</Button>
-                            {booking.status === 'pending' && (
+                            <Button size="sm" variant="outline">Ver detalles</Button>
+                            {booking.status === 'pendiente' && (
                               <>
-                                <Button size="sm" className="bg-green-600 hover:bg-green-700">Accept</Button>
-                                <Button size="sm" variant="outline">Decline</Button>
+                                <Button size="sm" className="bg-green-600 hover:bg-green-700">Aceptar</Button>
+                                <Button size="sm" variant="outline">Rechazar</Button>
                               </>
                             )}
                           </div>
@@ -428,35 +428,35 @@ const Dashboard = () => {
               <TabsContent value="analytics" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Analytics & Insights</CardTitle>
+                    <CardTitle>Análisis y estadísticas</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
                       <div>
-                        <h4 className="font-semibold mb-2">Profile Performance</h4>
+                        <h4 className="font-semibold mb-2">Rendimiento del perfil</h4>
                         <div className="space-y-2">
                           <div className="flex justify-between">
-                            <span className="text-sm text-gray-600">This Week's Views</span>
+                            <span className="text-sm text-gray-600">Vistas esta semana</span>
                             <span className="font-semibold">284</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-sm text-gray-600">Profile Completeness</span>
+                            <span className="text-sm text-gray-600">Perfil completado</span>
                             <span className="font-semibold text-green-600">95%</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-sm text-gray-600">Response Time</span>
-                            <span className="font-semibold">&lt; 1 hour</span>
+                            <span className="text-sm text-gray-600">Tiempo de respuesta</span>
+                            <span className="font-semibold">&lt; 1 hora</span>
                           </div>
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="font-semibold mb-2">Popular Search Terms</h4>
+                        <h4 className="font-semibold mb-2">Términos de búsqueda populares</h4>
                         <div className="flex flex-wrap gap-2">
-                          <Badge variant="secondary">London escort</Badge>
-                          <Badge variant="secondary">GFE</Badge>
-                          <Badge variant="secondary">Independent</Badge>
-                          <Badge variant="secondary">Outcall</Badge>
+                          <Badge variant="secondary">Escort Madrid</Badge>
+                          <Badge variant="secondary">Experiencia novia</Badge>
+                          <Badge variant="secondary">Independiente</Badge>
+                          <Badge variant="secondary">A domicilio</Badge>
                         </div>
                       </div>
                     </div>
@@ -470,30 +470,30 @@ const Dashboard = () => {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
+                <CardTitle>Acciones rápidas</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button className="w-full" variant="outline">
                   <Phone className="h-4 w-4 mr-2" />
-                  Update Availability
+                  Actualizar disponibilidad
                 </Button>
                 <Button className="w-full" variant="outline">
                   <Camera className="h-4 w-4 mr-2" />
-                  Upload Photos
+                  Subir fotos
                 </Button>
                 <Button className="w-full" variant="outline">
                   <Settings className="h-4 w-4 mr-2" />
-                  Account Settings
+                  Configuración de cuenta
                 </Button>
                 <Button className="w-full bg-orange-500 hover:bg-orange-600">
-                  Promote Ad
+                  Promocionar anuncio
                 </Button>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle>Contact Info</CardTitle>
+                <CardTitle>Información de contacto</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center space-x-3">
