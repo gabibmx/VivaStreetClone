@@ -23,7 +23,7 @@ export const mockProfiles = [
     age: 26,
     location: "Manchester",
     description: "Beautiful Asian companion offering discrete and professional service. Available for both incall and outcall.",
-    images: ["https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400", "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400"],
+    images: ["https://via.placeholder.com/400x500/fef3c7/f59e0b?text=Maya", "https://via.placeholder.com/400x500/fef3c7/f59e0b?text=Maya+2"],
     verified: true,
     featured: false,
     online: false,
