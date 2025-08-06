@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the Vivastreet clone application thoroughly. The application has the following features that need testing: Age Verification, Main Homepage, Authentication System, Profile Pages, Dashboard Features"
+user_problem_statement: "Test the Spanish version of the Vivastreet clone application. The application has been successfully converted to Spanish for Spain market. Testing includes: Spanish Age Verification Modal, Spanish Homepage with Spanish cities and Euro currency, Spanish Authentication System, Spanish Profile Pages, and Spanish Dashboard Features for both customers and models."
 
 frontend:
   - task: "Spanish Age Verification Modal"
