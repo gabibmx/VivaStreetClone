@@ -7,7 +7,7 @@ export const mockProfiles = [
     age: 23,
     location: "London",
     description: "Elegant and sophisticated companion available for discerning gentlemen. I offer a premium experience with excellent service.",
-    images: ["https://images.unsplash.com/photo-1494790108755-2616c26ce8d9?w=400", "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400"],
+    images: ["https://via.placeholder.com/400x500/e5e7eb/6b7280?text=Sofia", "https://via.placeholder.com/400x500/f3f4f6/9ca3af?text=Sofia+2"],
     verified: true,
     featured: true,
     online: true,
