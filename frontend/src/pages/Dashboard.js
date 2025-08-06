@@ -445,7 +445,7 @@ const Dashboard = () => {
                           </div>
                           <div className="flex justify-between">
                             <span className="text-sm text-gray-600">Response Time</span>
-                            <span className="font-semibold">< 1 hour</span>
+                            <span className="font-semibold">&lt; 1 hour</span>
                           </div>
                         </div>
                       </div>
