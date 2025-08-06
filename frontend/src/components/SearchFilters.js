@@ -91,7 +91,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
                 <SelectValue placeholder="Max" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any</SelectItem>
+                <SelectItem value="all">Any</SelectItem>
                 {[25, 30, 35, 40, 45, 50, 60].map(age => (
                   <SelectItem key={age} value={age.toString()}>{age}</SelectItem>
                 ))}
