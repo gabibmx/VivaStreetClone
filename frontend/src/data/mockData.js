@@ -71,7 +71,7 @@ export const mockProfiles = [
     age: 25,
     location: "Glasgow",
     description: "Sophisticated and elegant companion available for upscale clientele. Discretion guaranteed.",
-    images: ["https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400", "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=400"],
+    images: ["https://via.placeholder.com/400x500/dcfce7/16a34a?text=Aria", "https://via.placeholder.com/400x500/dcfce7/16a34a?text=Aria+2"],
     verified: true,
     featured: true,
     online: false,
