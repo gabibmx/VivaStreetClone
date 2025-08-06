@@ -108,7 +108,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               {mockEthnicities.map(ethnicity => (
                 <SelectItem key={ethnicity} value={ethnicity}>{ethnicity}</SelectItem>
               ))}
