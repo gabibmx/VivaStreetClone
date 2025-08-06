@@ -39,7 +39,7 @@ export const mockProfiles = [
     age: 28,
     location: "Birmingham",
     description: "Stunning brunette with a warm personality. Perfect for social events and private encounters.",
-    images: ["https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400", "https://images.unsplash.com/photo-1488716820095-cbe80883c496?w=400"],
+    images: ["https://via.placeholder.com/400x500/fce7f3/ec4899?text=Isabella", "https://via.placeholder.com/400x500/fce7f3/ec4899?text=Isabella+2"],
     verified: true,
     featured: true,
     online: true,
