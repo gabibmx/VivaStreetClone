@@ -63,7 +63,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               <SelectValue placeholder="All locations" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All locations</SelectItem>
+              <SelectItem value="all">All locations</SelectItem>
               {mockLocations.map(location => (
                 <SelectItem key={location} value={location}>{location}</SelectItem>
               ))}
