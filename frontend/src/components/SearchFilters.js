@@ -124,7 +124,7 @@ const SearchFilters = ({ searchTerm, setSearchTerm, filters, setFilters }) => {
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="Independent">Independent</SelectItem>
               <SelectItem value="Agency">Agency</SelectItem>
             </SelectContent>
