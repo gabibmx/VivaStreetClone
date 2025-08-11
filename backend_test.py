@@ -606,31 +606,36 @@ class VivastreetBackendTester:
         print("\n🔒 Testing Authentication Errors...")
         
         # Test without token
-        response = self.make_request("GET", "/auth/me")
-        
-        if response and response.status_code == 401:
-            data = response.json()
-            if not data.get("success") and "token" in data.get("message", "").lower():
-                self.log_test("No Token Error", True, "Proper 401 response for missing token")
+        try:
+            response = requests.get(f"{self.base_url}/auth/me", timeout=10)
+            if response and response.status_code == 401:
+                data = response.json()
+                if not data.get("success") and "token" in data.get("message", "").lower():
+                    self.log_test("No Token Error", True, "Proper 401 response for missing token")
+                else:
+                    self.log_test("No Token Error", False, f"Unexpected error response: {data}")
             else:
-                self.log_test("No Token Error", False, f"Unexpected error response: {data}")
-        else:
-            status = response.status_code if response else "No response"
-            self.log_test("No Token Error", False, f"Expected 401, got: {status}")
+                status = response.status_code if response else "No response"
+                self.log_test("No Token Error", False, f"Expected 401, got: {status}")
+        except Exception as e:
+            self.log_test("No Token Error", False, f"Request failed: {e}")
         
         # Test with invalid token
-        response = self.make_request("GET", "/auth/me", token="invalid-token")
-        
-        if response and response.status_code == 403:
-            data = response.json()
-            if not data.get("success") and "token" in data.get("message", "").lower():
-                self.log_test("Invalid Token Error", True, "Proper 403 response for invalid token")
-                return True
+        try:
+            headers = {"Authorization": "Bearer invalid-token"}
+            response = requests.get(f"{self.base_url}/auth/me", headers=headers, timeout=10)
+            if response and response.status_code == 403:
+                data = response.json()
+                if not data.get("success") and "token" in data.get("message", "").lower():
+                    self.log_test("Invalid Token Error", True, "Proper 403 response for invalid token")
+                    return True
+                else:
+                    self.log_test("Invalid Token Error", False, f"Unexpected error response: {data}")
             else:
-                self.log_test("Invalid Token Error", False, f"Unexpected error response: {data}")
-        else:
-            status = response.status_code if response else "No response"
-            self.log_test("Invalid Token Error", False, f"Expected 403, got: {status}")
+                status = response.status_code if response else "No response"
+                self.log_test("Invalid Token Error", False, f"Expected 403, got: {status}")
+        except Exception as e:
+            self.log_test("Invalid Token Error", False, f"Request failed: {e}")
         
         return False
     
